@@ -19,3 +19,18 @@ The provided YAML files define Kubernetes resources such as ConfigMaps, Stateful
    ```bash
    git clone https://github.com/your-username/mariadb-galera-k8s.git
    cd mariadb-galera-k8s
+
+2. **Aply Kubernetes configuration**
+
+   ```bash
+   kubectl apply -f galera-configmap.yaml
+   kubectl apply -f galera-statefulset.yaml
+   kubectl apply -f galera-service.yaml
+   kubectl apply -f mariadb-service.yaml
+3. **Check the status of the MariaDB pods**
+   ```bash
+   kubectl get pods
+   kubectl get services
+   kubectl logs mariadb-0
+   
+
