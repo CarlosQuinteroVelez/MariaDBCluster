@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: galera-config
+data:
+  my.cnf: |
+    [mysqld]
+    wsrep_on=ON
+    wsrep_provider=/usr/lib/galera/libgalera_smm.so
+    wsrep_cluster_address=gcomm://mariadb-0,mariadb-1,mariadb-2
+    wsrep_sst_method=rsync
+    wsrep_sst_auth=wsrep_sst_user:password
+    binlog_format=row
+    default_storage_engine=InnoDB
+    innodb_autoinc_lock_mode=2
